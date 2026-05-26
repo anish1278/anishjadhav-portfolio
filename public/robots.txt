@@ -1,0 +1,5 @@
+# Static fallback — dynamic version also served at /robots.txt via server route
+User-agent: *
+Allow: /
+
+Sitemap: https://anishjadhav.dev/sitemap.xml

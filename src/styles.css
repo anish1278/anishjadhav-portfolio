@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap');
+@import "tw-animate-css";
+@import "tailwindcss" source(none);
+@source "../src";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon: var(--neon);
+  --color-cyan-glow: var(--cyan-glow);
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.08 0.015 20);
+  --foreground: oklch(0.97 0.01 20);
+  --card: oklch(0.12 0.02 20 / 60%);
+  --card-foreground: oklch(0.97 0.01 20);
+  --popover: oklch(0.12 0.02 20);
+  --popover-foreground: oklch(0.97 0.01 20);
+  --primary: oklch(0.62 0.25 25);
+  --primary-foreground: oklch(0.08 0.015 20);
+  --secondary: oklch(0.70 0.18 210);
+  --secondary-foreground: oklch(0.08 0.015 20);
+  --muted: oklch(0.16 0.02 20);
+  --muted-foreground: oklch(0.7 0.03 20);
+  --accent: oklch(0.70 0.18 210);
+  --accent-foreground: oklch(0.08 0.015 20);
+  --destructive: oklch(0.65 0.25 25);
+  --destructive-foreground: oklch(0.97 0.01 20);
+  --border: oklch(0.97 0.01 20 / 10%);
+  --input: oklch(0.97 0.01 20 / 12%);
+  --ring: oklch(0.62 0.25 25);
+  --neon: oklch(0.62 0.25 25);
+  --cyan-glow: oklch(0.70 0.18 210);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-display);
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.62 0.25 25 / 0.15), transparent),
+      radial-gradient(ellipse 60% 50% at 100% 100%, oklch(0.70 0.18 210 / 0.1), transparent);
+    background-attachment: fixed;
+  }
+  ::selection { background: oklch(0.62 0.25 25 / 0.4); color: white; }
+}
+
+@layer utilities {
+  .text-neon { color: var(--neon); }
+  .text-cyan-glow { color: var(--cyan-glow); }
+  .bg-neon { background-color: var(--neon); }
+  .border-neon { border-color: var(--neon); }
+  .border-cyan-glow { border-color: var(--cyan-glow); }
+
+  .font-mono { font-family: var(--font-mono); }
+
+  .glass {
+    background: linear-gradient(135deg, oklch(1 0 0 / 0.04), oklch(1 0 0 / 0.01));
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid oklch(1 0 0 / 0.08);
+    box-shadow:
+      inset 0 1px 0 oklch(1 0 0 / 0.05),
+      0 20px 60px -20px oklch(0 0 0 / 0.5);
+  }
+  .glass-strong {
+    background: linear-gradient(135deg, oklch(0.13 0.03 230 / 0.7), oklch(0.08 0.02 240 / 0.5));
+    backdrop-filter: blur(24px) saturate(160%);
+    border: 1px solid oklch(0.62 0.25 25 / 0.18);
+  }
+
+  .glow-neon {
+    box-shadow:
+      0 0 20px oklch(0.62 0.25 25 / 0.4),
+      0 0 60px oklch(0.62 0.25 25 / 0.2),
+      inset 0 0 20px oklch(0.62 0.25 25 / 0.05);
+  }
+  .glow-cyan {
+    box-shadow:
+      0 0 20px oklch(0.70 0.18 210 / 0.4),
+      0 0 60px oklch(0.70 0.18 210 / 0.2);
+  }
+  .text-glow-neon { text-shadow: 0 0 20px oklch(0.62 0.25 25 / 0.7), 0 0 40px oklch(0.62 0.25 25 / 0.4); }
+  .text-glow-cyan { text-shadow: 0 0 20px oklch(0.70 0.18 210 / 0.7); }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(oklch(0.62 0.25 25 / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.62 0.25 25 / 0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 80%);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, oklch(0.97 0.01 20) 0%, oklch(0.62 0.25 25) 50%, oklch(0.70 0.18 210) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .scan-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, oklch(0.62 0.25 25 / 0.05) 50%, transparent 100%);
+    background-size: 100% 8px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+  .animate-float { animation: float-y 6s ease-in-out infinite; }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.9); opacity: 0.8; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+  .animate-pulse-ring { animation: pulse-ring 2.5s cubic-bezier(0.4,0,0.2,1) infinite; }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg) translateX(var(--r,140px)) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(var(--r,140px)) rotate(-360deg); }
+  }
+  .animate-orbit { animation: orbit var(--d, 18s) linear infinite; }
+
+  @keyframes blink { 50% { opacity: 0; } }
+  .animate-blink { animation: blink 1s step-end infinite; }
+
+  @keyframes scroll-down {
+    0% { transform: translateY(-50%); opacity: 0; }
+    40% { opacity: 1; }
+    100% { transform: translateY(50%); opacity: 0; }
+  }
+  .animate-scroll-down { animation: scroll-down 1.8s ease-in-out infinite; }
+
+  @keyframes grid-pan {
+    from { background-position: 0 0; }
+    to { background-position: 60px 60px; }
+  }
+  .animate-grid-pan { animation: grid-pan 12s linear infinite; }
+
+  @keyframes project-btn-shimmer {
+    0% { transform: translateX(-120%) skewX(-12deg); }
+    100% { transform: translateX(220%) skewX(-12deg); }
+  }
+  .project-btn-shimmer-neon::after,
+  .project-btn-shimmer-cyan::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(1 0 0 / 0.12),
+      transparent
+    );
+    animation: project-btn-shimmer 1.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .project-btn-shimmer-neon::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(0.62 0.25 25 / 0.25),
+      transparent
+    );
+  }
+  .project-btn-shimmer-cyan::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(0.70 0.18 210 / 0.25),
+      transparent
+    );
+  }
+}

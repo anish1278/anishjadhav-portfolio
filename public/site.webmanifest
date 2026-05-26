@@ -1,0 +1,24 @@
+{
+  "name": "Anish Jadhav — Portfolio",
+  "short_name": "Anish Jadhav",
+  "description": "AI Developer, Robotics Innovator, Web Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0408",
+  "theme_color": "#0c0408",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}
