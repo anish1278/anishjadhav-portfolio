@@ -9,23 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as CarSafetyRouteImport } from './routes/car-safety'
 import { Route as AlfabyteRouteImport } from './routes/alfabyte'
 import { Route as AiVisionRouteImport } from './routes/ai-vision'
 import { Route as IndexRouteImport } from './routes/index'
 
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
-  id: '/robots.txt',
-  path: '/robots.txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CarSafetyRoute = CarSafetyRouteImport.update({
   id: '/car-safety',
   path: '/car-safety',
@@ -52,16 +40,12 @@ export interface FileRoutesByFullPath {
   '/ai-vision': typeof AiVisionRoute
   '/alfabyte': typeof AlfabyteRoute
   '/car-safety': typeof CarSafetyRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ai-vision': typeof AiVisionRoute
   '/alfabyte': typeof AlfabyteRoute
   '/car-safety': typeof CarSafetyRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,8 +53,6 @@ export interface FileRoutesById {
   '/ai-vision': typeof AiVisionRoute
   '/alfabyte': typeof AlfabyteRoute
   '/car-safety': typeof CarSafetyRoute
-  '/robots.txt': typeof RobotsDottxtRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -79,24 +61,18 @@ export interface FileRouteTypes {
     | '/ai-vision'
     | '/alfabyte'
     | '/car-safety'
-    | '/robots.txt'
-    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/ai-vision'
     | '/alfabyte'
     | '/car-safety'
-    | '/robots.txt'
-    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
     | '/ai-vision'
     | '/alfabyte'
     | '/car-safety'
-    | '/robots.txt'
-    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -104,26 +80,10 @@ export interface RootRouteChildren {
   AiVisionRoute: typeof AiVisionRoute
   AlfabyteRoute: typeof AlfabyteRoute
   CarSafetyRoute: typeof CarSafetyRoute
-  RobotsDottxtRoute: typeof RobotsDottxtRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/robots.txt': {
-      id: '/robots.txt'
-      path: '/robots.txt'
-      fullPath: '/robots.txt'
-      preLoaderRoute: typeof RobotsDottxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/car-safety': {
       id: '/car-safety'
       path: '/car-safety'
@@ -160,19 +120,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiVisionRoute: AiVisionRoute,
   AlfabyteRoute: AlfabyteRoute,
   CarSafetyRoute: CarSafetyRoute,
-  RobotsDottxtRoute: RobotsDottxtRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
