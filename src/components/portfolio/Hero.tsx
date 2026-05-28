@@ -22,7 +22,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-neon/30 bg-neon/5 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.25em] text-neon"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-neon glow-neon" />
-            System Online · v.2026
+            NOVA Lab // Anish Jadhav
           </motion.div>
 
           <motion.h1
@@ -46,7 +46,9 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-8 max-w-xl font-mono text-sm leading-relaxed text-muted-foreground"
           >
-            <span className="text-neon">{">"}</span> Initializing <span className="text-foreground">Anish Abhijeet Jadhav</span> — 11th-grade student, JEE aspirant, web developer, and robotics innovator engineering the next generation of intelligent machines.
+            <span className="text-neon">{">"}</span> Initializing{" "}
+            <span className="text-neon text-glow-neon">Anish Abhijeet Jadhav</span>
+            {" "}-- 11th-grade student, JEE aspirant, web developer, and robotics innovator engineering the next generation of intelligent machines.
             <span className="ml-1 inline-block h-4 w-2 translate-y-0.5 bg-neon animate-blink" />
           </motion.p>
 
@@ -60,7 +62,7 @@ export function Hero() {
               href="#nova"
               className="group relative overflow-hidden rounded-full bg-neon px-7 py-3.5 font-mono text-sm font-semibold uppercase tracking-wider text-primary-foreground transition-all hover:glow-neon"
             >
-              Enter NOVA Lab →
+              Enter NOVA Lab
             </a>
             <a
               href="#projects"
@@ -80,7 +82,7 @@ export function Hero() {
             {[
               { v: "12+", l: "Projects" },
               { v: "3", l: "Robotics Builds" },
-              { v: "∞", l: "Curiosity" },
+              { v: "AI", l: "Systems by Anish" },
             ].map((s) => (
               <div
                 key={s.l}
@@ -111,7 +113,7 @@ export function Hero() {
             <div className="scan-line relative h-full w-full">
               <img
                 src={heroImg}
-                alt="Futuristic AI humanoid robot representing Anish's robotics work"
+                alt="Futuristic AI humanoid robot representing Anish Jadhav's robotics and AI systems"
                 width={1024}
                 height={1024}
                 className="h-full w-full object-cover"

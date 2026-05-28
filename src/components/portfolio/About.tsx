@@ -2,17 +2,17 @@ import { motion } from "framer-motion";
 import { SocialLinks } from "./SocialLinks";
 
 const timeline = [
-  { year: "2024", title: "Web Development", desc: "Started building modern websites with React and Tailwind for real clients." },
-  { year: "2025", title: "Robotics Innovator", desc: "Won taluka-level science exhibition with a Smart Car Safety System prototype." },
-  { year: "2025", title: "NOVA AI Lab", desc: "Founded NOVA — a personal AI assistant evolving from PC automation to a physical desk robot." },
-  { year: "2026", title: "Future Technology Builder", desc: "Currently developing advanced AI interfaces, robotics concepts, and immersive digital experiences through NOVA." },
+  { year: "2024", title: "Web Development", desc: "Anish Jadhav started building modern websites with React and Tailwind for real clients." },
+  { year: "2025", title: "Robotics Innovator", desc: "Anish won taluka-level science exhibition recognition with a Smart Car Safety System prototype." },
+  { year: "2025", title: "NOVA AI Lab", desc: "Founded NOVA -- a personal AI assistant by Anish Jadhav evolving from PC automation to a physical desk robot." },
+  { year: "2026", title: "Future Technology Builder", desc: "Anish Abhijeet Jadhav is developing advanced AI interfaces, robotics concepts, and immersive digital experiences through NOVA." },
 ];
 
 export function About() {
   return (
     <section id="about" className="relative scroll-mt-24 py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionLabel index="01" label="Identity.json" />
+        <SectionLabel index="01" label="Identity.Anish" />
         <div className="mt-6 grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           {/* Profile Card */}
           <motion.div
@@ -31,14 +31,14 @@ export function About() {
               <div className="mt-6 flex h-32 w-32 items-center justify-center rounded-2xl border border-neon/30 bg-gradient-to-br from-neon/20 to-cyan-glow/10 glow-neon">
                 <span className="font-display text-5xl font-bold text-neon text-glow-neon">A</span>
               </div>
-              <h3 className="mt-6 font-display text-3xl font-bold">Anish Abhijeet Jadhav</h3>
-              <p className="mt-1 font-mono text-xs uppercase tracking-widest text-cyan-glow">Student · Innovator · Builder</p>
+              <h2 className="mt-6 font-display text-3xl font-bold text-neon text-glow-neon">Anish Abhijeet Jadhav</h2>
+              <p className="mt-1 font-mono text-xs uppercase tracking-widest text-cyan-glow">Student // Innovator // Builder</p>
 
               <div className="mt-6 space-y-2 font-mono text-xs">
                 {[
                   ["status", "ONLINE"],
                   ["grade", "11th"],
-                  ["focus", "AI · Robotics · Web"],
+                  ["focus", "AI // Robotics // Web"],
                   ["mode", "BUILD/SHIP"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex justify-between border-b border-white/5 pb-1.5">
@@ -57,7 +57,7 @@ export function About() {
           {/* Timeline */}
           <div className="relative">
             <p className="mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              I'm a high-school builder obsessed with the intersection of <span className="text-neon">artificial intelligence</span>, <span className="text-cyan-glow">robotics</span>, and <span className="text-foreground">human-centered design</span>. I ship code, solder circuits, and chase ideas until they breathe.
+              I'm <span className="text-neon text-glow-neon">Anish Jadhav</span>, a high-school builder obsessed with the intersection of <span className="text-neon">artificial intelligence</span>, <span className="text-cyan-glow">robotics</span>, and <span className="text-foreground">human-centered design</span>. I ship code, solder circuits, and chase ideas until they breathe.
             </p>
 
             <div className="relative space-y-8 border-l border-neon/20 pl-8">

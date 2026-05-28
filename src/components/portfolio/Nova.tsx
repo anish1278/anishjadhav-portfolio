@@ -55,7 +55,7 @@ export function Nova() {
   
   // Simulator Chat States
   const [messages, setMessages] = useState<{ sender: "user" | "nova"; text: string }[]>([
-    { sender: "nova", text: "Systems online. Select a query chip to interface with NOVA." }
+    { sender: "nova", text: "NOVA Lab // Anish Jadhav online. Select a query chip to interface with NOVA." }
   ]);
   const [isTyping, setIsTyping] = useState(false);
 
@@ -78,7 +78,7 @@ export function Nova() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-neon/10 blur-[150px]" />
 
       <div className="relative mx-auto max-w-7xl px-6">
-        <SectionLabel index="02" label="Featured.Project" />
+        <SectionLabel index="02" label="NOVA.Anish" />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -93,7 +93,7 @@ export function Nova() {
               <span className="gradient-text">AI LAB</span>
             </h2>
             <p className="mt-4 max-w-2xl font-mono text-sm uppercase tracking-widest text-muted-foreground">
-              From software to silicon — a personal AI assistant becoming real.
+              AI Systems by Anish Abhijeet Jadhav -- from software to silicon.
             </p>
           </div>
           <div className="glass rounded-full px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-neon border border-neon/45 glow-neon">
@@ -114,7 +114,7 @@ export function Nova() {
               <div className="scan-line relative aspect-[4/3] overflow-hidden rounded-2xl">
                 <img
                   src={novaImg}
-                  alt="NOVA desk robot prototype with holographic display"
+                  alt="NOVA desk robot prototype by Anish Jadhav with holographic display"
                   width={1024}
                   height={768}
                   loading="lazy"
@@ -169,7 +169,7 @@ export function Nova() {
                 <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between font-mono text-[10px] text-foreground/80 pointer-events-none">
                   <div>
                     <div className="text-muted-foreground">SUBJECT</div>
-                    <div className="text-neon">NOVA · Desk Companion</div>
+                    <div className="text-neon">NOVA // Anish Jadhav</div>
                   </div>
                   <div className="text-right">
                     <div className="text-muted-foreground">CORE TEMP</div>

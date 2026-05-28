@@ -29,9 +29,9 @@ type Project = {
 const projects: Project[] = [
   {
     name: "AI Vision Experiments",
-    tag: "FULL-STACK",
-    desc: "Interactive AI and computer vision experiments featuring gesture control, handwriting recognition, and real-time visual tracking systems.",
-    longDesc: "A futuristic collection of Python-based AI and computer vision projects focused on real-time interaction systems. This lab includes hand tracking, gesture-based controls, handwriting recognition, augmented reality experiments, and intelligent visual processing using OpenCV, MediaPipe, and machine learning concepts. Each project is designed to explore the cutting edge of human-computer interaction through computer vision and AI.",
+    tag: "ANISH // AI",
+    desc: "AI Vision experiments by Anish Jadhav featuring gesture control, handwriting recognition, and real-time visual tracking systems.",
+    longDesc: "A futuristic collection of Python-based AI and computer vision projects by Anish Abhijeet Jadhav, focused on real-time interaction systems. This lab includes hand tracking, gesture-based controls, handwriting recognition, augmented reality experiments, and intelligent visual processing using OpenCV, MediaPipe, and machine learning concepts. Each project explores human-computer interaction through computer vision and AI.",
     image: ecommerceImg,
     githubUrl: "",
     liveDemoUrl: "",
@@ -51,9 +51,9 @@ const projects: Project[] = [
   },
   {
     name: "Alfabyte Computers",
-    tag: "CLIENT WORK",
-    desc: "Production website for a real computer retail brand — sleek service catalogue, contact funnel, and live deployment.",
-    longDesc: "A specialized computer hardware portfolio and quotation system designed to showcase custom computer builds, repair services, and retail parts. Features an interactive build-configurator wizard and a high-conversion leads routing funnel.",
+    tag: "ANISH // WEB",
+    desc: "Production client website designed and developed by Anish Jadhav with a sleek service catalogue, contact funnel, and live deployment.",
+    longDesc: "A specialized computer hardware portfolio and quotation system designed by Anish Abhijeet Jadhav to showcase custom computer builds, repair services, and retail parts. Features an interactive build-configurator wizard and a high-conversion leads routing funnel.",
     image: alfabyteImg,
     githubUrl: "",
     liveDemoUrl: "",
@@ -73,9 +73,9 @@ const projects: Project[] = [
   },
   {
     name: "Smart Car Safety System",
-    tag: "ROBOTICS",
-    desc: "Award-winning hardware project: an Arduino-based driver-assist system with collision sensing and real-time alerts.",
-    longDesc: "A cyber-physical hardware prototype engineered to prevent traffic accidents. Uses a mesh of ultrasonic sensors and infrared sensors connected to an Arduino microcontroller, providing real-time proximity telemetry, audio-visual alarms, and automatic braking actuation.",
+    tag: "ANISH // ROBOTICS",
+    desc: "Award-winning hardware project by Anish Jadhav: an Arduino driver-assist system with collision sensing and real-time alerts.",
+    longDesc: "A cyber-physical hardware prototype by Anish Abhijeet Jadhav engineered to prevent traffic accidents. Uses a mesh of ultrasonic sensors and infrared sensors connected to an Arduino microcontroller, providing real-time proximity telemetry, audio-visual alarms, and automatic braking actuation.",
     image: smartCarImg,
     githubUrl: "",
     liveDemoUrl: "",
@@ -266,13 +266,13 @@ export function Projects() {
         }
       `}</style>
       <div className="mx-auto max-w-7xl px-6">
-        <SectionLabel index="03" label="Builds.Archive" />
+        <SectionLabel index="03" label="Anish.Builds" />
         <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
           <h2 className="font-display text-5xl font-bold sm:text-6xl">
             <span className="gradient-text">Selected</span> <span className="text-neon text-glow-neon">Projects</span>
           </h2>
           <p className="max-w-md font-mono text-xs uppercase tracking-widest text-muted-foreground">
-            Real shipped work — from client websites to hardware prototypes. Click a card to boot details.
+            Real shipped work by Anish Jadhav -- from client websites to hardware prototypes. Click a card to boot details.
           </p>
         </div>
 
@@ -321,7 +321,7 @@ export function Projects() {
               >
                 <img
                   src={p.image}
-                  alt={p.name}
+                  alt={`${p.name} project preview by Anish Jadhav`}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div
@@ -423,7 +423,7 @@ export function Projects() {
                 <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-white/5">
                   <img
                     src={selectedProj.image}
-                    alt={selectedProj.name}
+                    alt={`${selectedProj.name} project detail by Anish Jadhav`}
                     className="h-full w-full object-cover"
                   />
                   <div className="scan-line absolute inset-0" />

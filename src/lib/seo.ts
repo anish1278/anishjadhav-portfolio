@@ -1,13 +1,11 @@
 /** Central SEO config — portfolio + project pages */
 
-import { getActiveSocialLinks } from "./socials";
-
 export const SEO = {
   siteName: "Anish Jadhav",
   fullName: "Anish Abhijeet Jadhav",
-  tagline: "AI Developer, Robotics Innovator, Web Developer",
+  tagline: "AI Systems, Robotics & Web Developer Portfolio",
   defaultDescription:
-    "Portfolio of Anish Jadhav — AI developer, robotics innovator, and web developer. Explore NOVA AI Lab, computer vision experiments, client websites, and hardware prototypes.",
+    "Official portfolio of Anish Abhijeet Jadhav, also known as Anish Jadhav. Explore AI systems, robotics prototypes, NOVA AI Lab, computer vision experiments, client websites, and futuristic web development projects.",
   twitterHandle: "@anish_jadhav",
   locale: "en_US",
   themeColor: "#0c0408",
@@ -18,6 +16,8 @@ export const SEO = {
 export const DEFAULT_KEYWORDS = [
   "Anish Jadhav",
   "Anish Abhijeet Jadhav",
+  "Anish Jadhav portfolio",
+  "Anish Abhijeet Jadhav portfolio",
   "AI developer",
   "robotics innovator",
   "web developer",
@@ -59,7 +59,7 @@ export function getSiteUrl(): string {
   const fromEnv = import.meta.env.VITE_SITE_URL as string | undefined;
   if (fromEnv?.trim()) return fromEnv.trim().replace(/\/$/, "");
   if (typeof window !== "undefined") return window.location.origin;
-  return "https://anishjadhav.dev";
+  return "https://anishjadhav-portfolio.vercel.app";
 }
 
 function canonicalUrl(path: string): string {
@@ -79,18 +79,22 @@ export function buildPersonJsonLd(siteUrl: string) {
     "@type": "Person",
     "@id": `${siteUrl}/#person`,
     name: SEO.fullName,
-    alternateName: SEO.siteName,
+    alternateName: [SEO.siteName, "Anish"],
     url: siteUrl,
     jobTitle: SEO.tagline,
     description: SEO.defaultDescription,
-    sameAs: getActiveSocialLinks().map((link) => link.href),
+    sameAs: [siteUrl],
     knowsAbout: [
       "Artificial Intelligence",
       "Robotics",
       "Web Development",
       "Computer Vision",
       "Embedded Systems",
+      "React",
+      "Arduino",
+      "NOVA AI Lab",
     ],
+    owns: { "@id": `${siteUrl}/#website` },
   };
 }
 
@@ -98,7 +102,7 @@ export function buildWebsiteJsonLd(siteUrl: string) {
   return {
     "@type": "WebSite",
     "@id": `${siteUrl}/#website`,
-    name: `${SEO.siteName} — ${SEO.tagline}`,
+    name: `${SEO.siteName} | ${SEO.tagline}`,
     alternateName: SEO.fullName,
     url: siteUrl,
     description: SEO.defaultDescription,
@@ -228,22 +232,24 @@ export function buildRootHeadLinks() {
 
 export const PAGE_SEO = {
   home: {
-    title: `${SEO.siteName} — ${SEO.tagline}`,
+    title: `${SEO.siteName} | ${SEO.tagline}`,
     fullTitle: true,
     description: SEO.defaultDescription,
     path: "/",
     keywords: [
       "Anish Jadhav portfolio",
+      "Anish Abhijeet Jadhav",
       "AI robotics portfolio",
+      "AI systems by Anish Jadhav",
       "NOVA AI lab",
       "web developer India",
       "student developer portfolio",
     ],
   },
   aiVision: {
-    title: "AI Vision Experiments",
+    title: "AI Vision Experiments by Anish Jadhav",
     description:
-      "Real-time computer vision projects by Anish Jadhav — AR finger drawing, Naruto hand-seal recognition, and gesture OS experiments built with MediaPipe, OpenCV, and WebRTC.",
+      "Real-time computer vision projects by Anish Abhijeet Jadhav, also known as Anish Jadhav, including AR finger drawing, Naruto hand-seal recognition, and gesture OS experiments built with MediaPipe, OpenCV, and WebRTC.",
     path: "/ai-vision",
     keywords: [
       "AI vision",
@@ -252,20 +258,21 @@ export const PAGE_SEO = {
       "AR drawing",
       "gesture recognition",
       "computer vision portfolio",
+      "Anish Jadhav AI projects",
     ],
     jsonLd: (siteUrl: string) =>
       buildCreativeWorkJsonLd(
         siteUrl,
         "/ai-vision",
-        "AI Vision Experiments",
-        "Interactive AI and computer vision experiments with real-time hand tracking.",
+        "AI Vision Experiments by Anish Jadhav",
+        "Interactive AI and computer vision experiments with real-time hand tracking by Anish Jadhav.",
         "Computer Vision",
       ),
   },
   alfabyte: {
-    title: "Alfabyte Computers — Client Website",
+    title: "Alfabyte Computers Client Website by Anish Jadhav",
     description:
-      "Production retail website case study for Alfabyte Computers — React, Vite, Tailwind, Framer Motion, live deployment, and conversion-focused contact funnel by Anish Jadhav.",
+      "Production retail website case study by Anish Abhijeet Jadhav for Alfabyte Computers, built with React, Vite, Tailwind, Framer Motion, live deployment, and a conversion-focused contact funnel.",
     path: "/alfabyte",
     keywords: [
       "Alfabyte Computers",
@@ -273,20 +280,21 @@ export const PAGE_SEO = {
       "React portfolio",
       "retail web design",
       "Vercel deployment",
+      "Anish Jadhav web developer",
     ],
     jsonLd: (siteUrl: string) =>
       buildCreativeWorkJsonLd(
         siteUrl,
         "/alfabyte",
-        "Alfabyte Computers Website",
-        "Production computer retail brand website with catalogue and contact funnel.",
+        "Alfabyte Computers Website by Anish Jadhav",
+        "Production computer retail brand website with catalogue and contact funnel by Anish Jadhav.",
         "Web Development",
       ),
   },
   carSafety: {
-    title: "Smart Car Safety System — Robotics",
+    title: "Smart Car Safety System Robotics by Anish Jadhav",
     description:
-      "Arduino-based smart car safety prototype by Anish Jadhav — drowsiness detection, alcohol sensing, rear radar alerts, and award-winning science exhibition build.",
+      "Arduino-based smart car safety prototype by Anish Abhijeet Jadhav, also known as Anish Jadhav, featuring drowsiness detection, alcohol sensing, rear radar alerts, and an award-winning science exhibition build.",
     path: "/car-safety",
     keywords: [
       "smart car safety",
@@ -295,13 +303,14 @@ export const PAGE_SEO = {
       "driver assistance",
       "science exhibition",
       "embedded systems",
+      "Anish Jadhav robotics project",
     ],
     jsonLd: (siteUrl: string) =>
       buildCreativeWorkJsonLd(
         siteUrl,
         "/car-safety",
-        "Smart Car Safety System",
-        "Hardware driver-protection system with sensors, buzzer alerts, and automated response.",
+        "Smart Car Safety System by Anish Jadhav",
+        "Hardware driver-protection system with sensors, buzzer alerts, and automated response by Anish Jadhav.",
         "Robotics",
       ),
   },

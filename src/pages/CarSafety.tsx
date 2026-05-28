@@ -256,7 +256,7 @@ function ImgCard({
         background: src ? "transparent" : "radial-gradient(ellipse at 50% 50%, rgba(249,115,22,0.06), #0c0400)",
       }}>
         {src ? (
-          <img src={src} alt={label}
+          <img src={src} alt={`${label} from Anish Jadhav's Smart Car Safety System project`}
             style={{ width: "100%", height: "100%", objectFit: "cover",
               transition: "transform 0.4s",
               transform: hovered ? "scale(1.04)" : "scale(1)",
@@ -645,7 +645,7 @@ export default function SmartCar() {
                 style={{
                 background:"radial-gradient(ellipse at 50% 50%, rgba(249,115,22,0.05), #0c0400)",
               }}>
-                <img src={diagram1} alt="System Architecture Diagram"
+                <img src={diagram1} alt="Smart Car Safety System architecture diagram by Anish Jadhav"
                   style={{ width: "100%", height: "100%", objectFit: "contain",
                     transition: "transform 0.4s",
                   }} />
@@ -667,7 +667,7 @@ export default function SmartCar() {
                 style={{
                 background:"radial-gradient(ellipse at 50% 50%, rgba(249,115,22,0.05), #0c0400)",
               }}>
-                <img src={diagram2} alt="Driver Protection Flow Map"
+                <img src={diagram2} alt="Driver protection flow map for Anish Jadhav's Smart Car Safety System"
                   style={{ width: "100%", height: "100%", objectFit: "contain",
                     transition: "transform 0.4s",
                   }} />

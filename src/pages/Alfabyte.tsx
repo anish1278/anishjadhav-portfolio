@@ -488,7 +488,7 @@ export default function Alfabyte() {
                 }}>
                   <img
                     src={SCREENS[activeScreen].image}
-                    alt={SCREENS[activeScreen].label}
+                    alt={`${SCREENS[activeScreen].label} from Alfabyte Computers website designed by Anish Jadhav`}
                     style={{
                       position: "absolute",
                       inset: 0,

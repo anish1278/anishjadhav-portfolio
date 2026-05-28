@@ -34,7 +34,7 @@ export function Nav() {
             <span className="absolute inset-0 animate-pulse-ring rounded-full bg-neon" />
             <span className="relative h-2 w-2 rounded-full bg-neon" />
           </span>
-          <span className="text-neon">ANISH</span>
+          <span className="text-neon text-glow-neon">ANISH JADHAV</span>
           <span className="text-muted-foreground">// v2.0</span>
         </a>
 
