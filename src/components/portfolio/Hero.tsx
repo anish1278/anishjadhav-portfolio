@@ -48,7 +48,7 @@ export function Hero() {
           >
             <span className="text-neon">{">"}</span> Initializing{" "}
             <span className="text-neon text-glow-neon">Anish Abhijeet Jadhav</span>
-            {" "}-- 11th-grade student, JEE aspirant, web developer, and robotics innovator engineering the next generation of intelligent machines.
+            {" "}-- 11th-grade student, web developer, and robotics innovator engineering the next generation of intelligent machines.
             <span className="ml-1 inline-block h-4 w-2 translate-y-0.5 bg-neon animate-blink" />
           </motion.p>
 
